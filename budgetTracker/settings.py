@@ -1,5 +1,5 @@
 import os
-
+import dj_database_url
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -81,14 +81,14 @@ DATABASES = {
         #'ENGINE': 'django.db.backends.sqlite3',
         #'NAME': BASE_DIR / 'db.sqlite3',
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'Expense_Tracker',
-        'USER':'postgres',
-        'PASSWORD':'smark',
-        'HOST':'localhost',
+        'NAME': 'recepto',
+        'USER':'recepto_user',
+        'PASSWORD':'l85UBvsmQSFWAtZ57gJrsh9gyqMY5Bmr',
+        'HOST':'dpg-cosb0820si5c739sbgpg-a.oregon-postgres.render.com',
         'PORT':'5432',
     }
 }
-
+DATABASES['default'] = dj_database_url.parse("postgres://recepto_user:l85UBvsmQSFWAtZ57gJrsh9gyqMY5Bmr@dpg-cosb0820si5c739sbgpg-a.oregon-postgres.render.com/recepto")
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
