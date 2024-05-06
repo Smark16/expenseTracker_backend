@@ -10,13 +10,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-+@9r1@y)$c0!2yr7yzbd(fhi5q+d%5mjowl$fynjy&5i9=(0%c'
+SECRET_KEY = os.environ.get("SECRET_KEY")
+#SECRET_KEY = 'django-insecure-+@9r1@y)$c0!2yr7yzbd(fhi5q+d%5mjowl$fynjy&5i9=(0%c'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get("DEBUG", "False").lower() == "true"
+#DEBUG = True
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS").split(" ")
+#ALLOWED_HOSTS = []
 
 # Application definition
 
@@ -88,7 +90,9 @@ DATABASES = {
         'PORT':'5432',
     }
 }
-DATABASES['default'] = dj_database_url.parse("postgres://recepto_user:l85UBvsmQSFWAtZ57gJrsh9gyqMY5Bmr@dpg-cosb0820si5c739sbgpg-a.oregon-postgres.render.com/recepto")
+database_url = os.environ.get("DATABASE_URL")
+DATABASES['default'] = dj_database_url.parse(database_url)
+#"postgres://recepto_user:l85UBvsmQSFWAtZ57gJrsh9gyqMY5Bmr@dpg-cosb0820si5c739sbgpg-a.oregon-postgres.render.com/recepto"
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
