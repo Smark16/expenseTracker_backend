@@ -84,7 +84,7 @@ DATABASES = {
         'NAME': 'recepto',
         'USER':'recepto_user',
         'PASSWORD':'l85UBvsmQSFWAtZ57gJrsh9gyqMY5Bmr',
-        'HOST':'dpg-cosb0820si5c739sbgpg-a.oregon-postgres.render.com',
+        'HOST':'dpg-cosb0820si5c739sbgpg-a',
         'PORT':'5432',
     }
 }
