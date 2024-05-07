@@ -82,12 +82,12 @@ DATABASES = {
     'default': {
         #'ENGINE': 'django.db.backends.sqlite3',
         #'NAME': BASE_DIR / 'db.sqlite3',
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'recepto',
-        'USER':'recepto_user',
-        'PASSWORD':'l85UBvsmQSFWAtZ57gJrsh9gyqMY5Bmr',
-        'HOST':'dpg-cosb0820si5c739sbgpg-a',
-        'PORT':'5432',
+        # 'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        # 'NAME': 'recepto',
+        # 'USER':'postgres',
+        # 'PASSWORD':'smark',
+        # 'HOST':'localhost',
+        # 'PORT':'5432',
     }
 }
 database_url = os.environ.get("DATABASE_URL")
